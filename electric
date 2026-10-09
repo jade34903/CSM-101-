@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class NewClass4 {
+    public static void main(String[] args) { // Fixed: added 'main' and fixed brackets
+        Scanner input = new Scanner(System.in);
+        String g1; // Fixed: 'String' capitalization and variable name casing
+        double g2, r, c, i, r1, c1, i1; // Fixed: changed to lowercase for consistency
+        
+        System.out.println("R - Residential"); // Fixed: 'System' spelling
+        System.out.println("C - Commercial");
+        System.out.println("I - Industrial"); // Fixed: 'Industrial' spelling
+        System.out.println("Pick a Category: ");
+        
+        g1 = input.nextLine(); // Fixed: 'nextLine' capitalization
+        
+        switch(g1.toUpperCase()) { // Added .toUpperCase() so it accepts both 'r' and 'R'
+            case "R":
+                System.out.println("Enter Consumption: "); // Fixed: spelling
+                g2 = input.nextDouble();
+                if (g2 > 200) {
+                    r = g2 * 18;
+                    System.out.println("Your monthly bill is: " + r);
+                } else {
+                    r1 = g2 * 13; // Fixed: replaced '-' with '='
+                    System.out.println("Your monthly bill is: " + r1); // Fixed: spelling
+                }
+                break; // Fixed: replaced ':' with ';'
+                
+            case "C":
+                System.out.println("Enter Consumption: "); // Fixed: typo at the end
+                g2 = input.nextDouble();
+                if (g2 > 200) {
+                    c = g2 * 20;
+                    System.out.println("Your monthly bill is: " + c);
+                } else {
+                    c1 = g2 * 15;
+                    System.out.println("Your monthly bill is: " + c1);
+                } // Fixed: added missing closing bracket for 'else'
+                break;
+                
+            case "I":
+                System.out.println("Enter Consumption: ");
+                g2 = input.nextDouble();
+                if (g2 > 200) {
+                    i = g2 * 23;
+                    System.out.println("Your monthly bill is: " + i);
+                } else {
+                    i1 = g2 * 18; // Fixed: assigned to 'i1' instead of 'c1'
+                    System.out.println("Your monthly bill is: " + i1);
+                } // Fixed: added missing closing bracket for 'else'
+                break;
+                
+            default:
+                System.out.println("Invalid Choice!");
+                break;
+        }
+    }
+}
