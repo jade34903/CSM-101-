@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class NewClass6 {
+
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner (System.in);
+    double balance = 1000;
+    boolean running = true;
+    
+    while (running) {
+        System.out.println("\n--- ATM MENU ---");
+        System.out.println("1. Balance Inquiry");
+        System.out.println("2. Withdraw");
+        System.out.println("3. Deposit");
+        System.out.println("4. Quit");
+        System.out.println("Enter your choice (1-4): ");
+        
+        int choice = scanner.nextInt();
+        
+        switch (choice) {
+            case 1: 
+                System.out.print("Your current balacne is: " + balance);
+                break;
+            
+            case 2: 
+                System.out.print("Enter amount to withdraw: ");
+                double withdrawAmount = scanner.nextDouble();
+                if (withdrawAmount > balance) { 
+                System.out.println("Insufficient funds!");
+                } else if (withdrawAmount <=0) {
+                System.out.println("Invalid Amount!");
+                } else {
+                balance = balance - withdrawAmount;
+                System.out.print("Successfully withdraw . New balance: " + balance);
+                }
+                break;
+            
+            case 3:
+                System.out.print("Enter amount to deposit: ");
+                double depositAmount = scanner.nextDouble();
+                if (depositAmount <= 0) {
+                System.out.println("INvalid amount!");
+                } else {
+                balance = balance + depositAmount;
+                System.out.print("Successfully deposit. New balance: " + balance);
+                }
+                break;
+                
+            case 4:
+                System.out.println("Thank you for using the ATM. Goodbye!");
+                running = false;
+                break;
+                 
+            default:
+                System.out.println("Invalid choice! PLease select an option between 1 and 4.");
+        }
+    }
+    scanner.close();
+                
+}
+            
+            
+                
+            
+        
+    
+        
+}
