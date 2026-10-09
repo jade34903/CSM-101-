@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Random;
+public class NewClass7 {
+
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    Random random = new Random();
+    boolean playing = true;
+    
+    System.out.println("Multiplication Practice Game!");
+    System.out.println("Type -1 at any time to exit.\n");
+    
+    while (playing) {
+        int number1 = random.nextInt(10) + 1;
+        int number2 = random.nextInt(10) + 1;
+        int correct = number1 * number2;Q
+        
+        System.out.print("What is " + number1 + " * " + number2 + "?: ");
+        int answer = scanner.nextInt();
+        
+        if (answer == -1) {
+            playing = false;
+            System.out.println("Goodbye!");
+        }   else if (answer == correct) {
+            System.out.println("Corect\n");
+        }   else {
+            System.out.println("Wtrong. The asnwer is " + correct + ".\n");
+        }
+}
+}
+}
+
