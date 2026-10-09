@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class NewClass3 { 
+    public static void main(String[] args) { 
+        Scanner input = new Scanner(System.in); 
+        double balance = 1000.00; 
+        int choice; 
+        double withdrawalAmount, depositAmount; 
+
+        System.out.println("Press 1 for Balance Inquiry: "); 
+        System.out.println("Press 2 for Withdrawal: "); 
+        System.out.println("Press 3 for Deposit: "); 
+        choice = input.nextInt(); 
+
+        switch(choice) { 
+            case 1: 
+                System.out.println("Your balance is: " + balance); 
+                break; 
+                
+            case 2: 
+                System.out.println("Input Withdrawal Amount: "); 
+                withdrawalAmount = input.nextDouble(); 
+                if (withdrawalAmount > balance) {
+                    System.out.println("Insufficient Balance."); 
+                } else if (withdrawalAmount % 100 != 0) { 
+                    System.out.println("Amount must be divisible by 100"); 
+                } else { 
+                    balance -= withdrawalAmount; // Corrected to deduct the amount
+                    System.out.println("Withdrawal Success"); 
+                    System.out.println("Your new balance is: " + balance); 
+                } 
+                break; 
+                
+            case 3: 
+                System.out.println("Enter deposit amount: "); 
+                depositAmount = input.nextDouble(); 
+                if (depositAmount <= 0) { 
+                    System.out.println("Invalid deposit amount."); 
+                } else { 
+                    balance += depositAmount; 
+                    System.out.println("Deposit Success"); 
+                    System.out.println("Your new balance is: " + balance); 
+                } 
+                break; 
+                
+            default: 
+                System.out.println("Invalid choice. Please select 1, 2, or 3."); 
+                break; 
+        } 
+        input.close(); // Good practice to close the scanner
+    } 
+}
